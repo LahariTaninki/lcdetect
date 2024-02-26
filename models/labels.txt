@@ -1,6 +1,4 @@
-0 Benign
-1 Malignant Cancer
-2 Adenocarcinoma
-3 Large cell Carcinoma
-4 Normal
-5 Squamous
+0 Adenocarcinoma
+1 Large cell Carcinoma
+2 Normal
+3 Squamous
