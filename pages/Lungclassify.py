@@ -35,7 +35,7 @@ if uploaded_file!=None:
 x = st.button("Predict")
 if x:
     with st.spinner("Diagnosing...."):
-        model = load_model('models/LCC.h5', compile = False)
+        model = load_model('models/CNN.h5', compile = False)
         image = Image.open(uploaded_file)
         size = (224, 224)
         image = ImageOps.fit(image, size)
@@ -44,7 +44,7 @@ if x:
         image_array = preprocess_input(image_array)
         predictions = model.predict(image_array)
         predicted_class_index = np.argmax(predictions)
-        custom_class_labels = ["Benign","Malignant Cancer","Adenocarcinoma","Large Cell Carcinoma","Normal","Squamous"]
+        custom_class_labels = ["Adenocarcinoma","Large Cell Carcinoma","Normal","Squamous"]
         predicted_class_label = custom_class_labels[predicted_class_index]
         #Print the predicted class label and its corresponding probability
         st.write(predicted_class_index)
